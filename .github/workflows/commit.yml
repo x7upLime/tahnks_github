@@ -19,3 +19,31 @@ jobs:
           cache-dependency-path: ./go.sum
       - name: runs main
         run: sudo -E go run main.go
+
+
+  # Runs before all other jobs
+  # builds the minikube binaries
+  build_minikubeDARWIN:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+      - uses: actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9
+        with:
+          go-version: ${{env.GO_VERSION}}
+          cache-dependency-path: ./go.sum
+      - name: runs main
+        run: sudo -E go run main.go
+
+  # Runs before all other jobs
+  # builds the minikube binaries
+  build_minikubeWINDOWS:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+      - uses: actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9
+        with:
+          go-version: ${{env.GO_VERSION}}
+          cache-dependency-path: ./go.sum
+      - name: runs main
+        run: sudo -E go run main.go
+        
