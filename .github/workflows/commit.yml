@@ -12,5 +12,5 @@ jobs:
   build_minikube:
     runs-on: ubuntu-20.04
     steps:
-      - name: run
-        run: sudo -E go run .
+      - name: runs main
+        run: sudo -E go run main.go
